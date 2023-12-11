@@ -1,41 +1,41 @@
 <?php
-// Conexión a la base de datos (reemplaza 'localhost', 'usuario', 'contraseña' y 'basededatos' con tus propios detalles)
-$conexion = new mysqli('localhost', 'usuario', 'contraseña', 'basededatos');
+//Conexión a la base de datos
+$conexion = new mysqli('localhost', 'gestor', 'secreto', 'proyecto');
 
-// Verifica la conexión
+//Se verifica la conexión
 if ($conexion->connect_error) {
     die("Error en la conexión a la base de datos: " . $conexion->connect_error);
 }
 
-// Recibe los datos del formulario de registro
+//Se reciben los datos del formulario de registro
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST["nombre"];
-    $usuario = $_POST["usuario"];
+    $idusuario = $_POST["usuario"];
     $correo = $_POST["correo"];
     $contrasena = $_POST["contrasena"];
 
-    // Consulta SQL para verificar si el usuario ya existe
-    $consulta_usuario_existente = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
+    //Consulta SQL para verificar si el usuario ya existe
+    $consulta_usuario_existente = "SELECT * FROM usuarios WHERE idusuario = '$idusuario'";
     $resultado_usuario_existente = $conexion->query($consulta_usuario_existente);
 
-    // Verifica si el usuario ya existe
+    //Se verifica si el usuario ya existe
     if ($resultado_usuario_existente->num_rows > 0) {
-        // Usuario ya registrado, puedes mostrar un mensaje de error o redirigirlo a la página de registro
+        //Usuario ya registrado, se muestra un mensaje de error
         echo "El nombre de usuario ya está en uso. Elige otro.";
     } else {
-        // Inserta el nuevo usuario en la base de datos
-        $consulta_registro = "INSERT INTO usuarios (nombre, usuario, correo, contrasena) VALUES ('$nombre', '$usuario', '$correo', '$contrasena')";
+        //Se inserta el nuevo usuario en la base de datos
+        $consulta_registro = "INSERT INTO usuarios (nombre, idusuario, correo, contrasena) VALUES ('$nombre', '$idusuario', '$correo', '$contrasena')";
         if ($conexion->query($consulta_registro) === TRUE) {
-            // Registro exitoso, puedes redirigirlo a otra página
+            //Registro exitoso, se redirige a la página principal
             header("Location: index.html");
             exit();
         } else {
-            // Error en el registro, puedes mostrar un mensaje de error o redirigirlo a la página de registro
+            //Error en el registro, se muestra un mensaje de error
             echo "Error en el registro: " . $conexion->error;
         }
     }
 }
 
-// Cierra la conexión
+//Se cierra la conexión
 $conexion->close();
 ?>

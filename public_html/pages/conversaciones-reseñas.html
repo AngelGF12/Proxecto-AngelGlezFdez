@@ -26,6 +26,38 @@
     <br/>
     <section>
         <h2>Conversaciones/Reseñas</h2>
+        
+         <!-- Botón para abrir el formulario -->
+        <button class="btnNueva" onclick="mostrarFormulario()">Nueva Coversación/Reseña</button>
+
+        <!-- Formulario para publicar una conversación o reseña -->
+        <form action="../php/agregar_comentario.php" method="POST" id="commentForm" onsubmit="return agregarComentario()" style="display: none;">
+            <br/>
+            <input type="hidden" id="usuario" name="usuario" value="<?php echo obtenerUsuarioLogeado(); ?>">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            <br/><br/>
+            <label for="comentario">Comentario:</label>
+            <textarea id="comentario" name="comentario" rows="4" required></textarea>
+            <br/><br/>
+            <button type="reset">Borrar</button>
+            <button type="submit">Publicar</button>
+        </form>
+
+        <br/><br/>
+        
+        <!-- Sección para mostrar comentarios -->
+        <div id="comentarios">
+            <!-- Cada comentario se muestra en un div -->
+            <div class="comentario">
+                <p>Usuario: <span class="usuarioComentario">NombreUsuario</span></p>
+                <p>Título: <span class="tituloComentario">Título del comentario</span></p>
+                <p>Comentario: <span class="contenidoComentario">Contenido del comentario</span></p>
+                <!-- Botones  -->
+                <button class="btnMeGusta">Me gusta</button>
+                <button class="btnEliminar" onclick="eliminarComentario()">Eliminar</button>
+            </div>
+        </div>
     </section>
     
     <footer>

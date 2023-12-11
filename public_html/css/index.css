@@ -28,6 +28,7 @@
     content: "\e030";
 }
 
+/* Estilos */
 body {
     font-family: 'Helvetica', sans-serif;
     margin: 2%;
@@ -53,6 +54,7 @@ section p a {
     color: dodgerblue;
 }
 
+/* Estilos logo y texto presentación */
 .fondoLogo {
     background-color: #fff;
     padding: 5px;
@@ -74,6 +76,7 @@ section p a {
     font-size: 1.4em;
 }
 
+/* Estilos menú navegación */
 .menu ul {
     list-style: none;
     margin: 0;
@@ -109,6 +112,7 @@ label {
     margin-bottom: 10px;
 }
 
+/* Estilos footer */
 footer {
     margin: 5% -2% -2% -2%;
     background-color: #fff;
@@ -150,7 +154,8 @@ footer p {
     text-align: right;
 }
 
-input {
+/* Estilos elementos de formularios */
+input, textarea {
     font-family: 'Helvetica', sans-serif;
     font-size: 15px;
     border-radius: 6px;
@@ -175,6 +180,7 @@ input[type="reset"]:active, input[type="submit"]:active{
     font-size: 18px;
 }
 
+/* Estilos botones */
 button[type="submit"] {
     font-family: 'Helvetica', sans-serif;
     font-size: 12px;
@@ -209,4 +215,22 @@ button[type="reset"] {
 button[type="reset"]:hover {
     background-color: #fff;
     color: indianred;
+}
+
+.btnNueva {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    border-radius: 8px;
+    border: 2px solid deepskyblue;
+    padding: 14px 20px;
+    width: auto;
+    cursor: pointer;
+    background-color: deepskyblue;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btnNueva:hover {
+    background-color: #fff;
+    color: deepskyblue;
 }

@@ -1,32 +1,32 @@
 <?php
-// Conexión a la base de datos (reemplaza 'localhost', 'usuario', 'contraseña' y 'basededatos' con tus propios detalles)
-$conexion = new mysqli('localhost', 'usuario', 'contraseña', 'basededatos');
+//Conexión a la base de datos
+$conexion = new mysqli('localhost', 'gestor', 'secreto', 'proyecto');
 
-// Verifica la conexión
+//Se verifica la conexión
 if ($conexion->connect_error) {
     die("Error en la conexión a la base de datos: " . $conexion->connect_error);
 }
 
-// Recibe los datos del formulario
+//Se reciben los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = $_POST["usuario"];
+    $idusuario = $_POST["usuario"];
     $contrasena = $_POST["contrasena"];
 
-    // Consulta SQL para verificar las credenciales
-    $consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND contrasena = '$contrasena'";
+    //Consulta SQL para verificar las credenciales
+    $consulta = "SELECT * FROM usuarios WHERE idusuario = '$idusuario' AND contrasena = '$contrasena'";
     $resultado = $conexion->query($consulta);
 
-    // Verifica si se encontró un usuario con las credenciales proporcionadas
+    //Se verifica si se encontró un usuario con las credenciales proporcionadas
     if ($resultado->num_rows > 0) {
-        // Usuario autenticado, puedes redirigirlo a otra página
+        //Usuario autenticado, se redirige a la página principal
         header("Location: index.html");
         exit();
     } else {
-        // Credenciales incorrectas, puedes mostrar un mensaje de error o redirigirlo a la página de inicio de sesión
+        //Credenciales incorrectas, se muestra un mensaje de error
         echo "Credenciales incorrectas. Vuelve a intentarlo.";
     }
 }
 
-// Cierra la conexión
+//Se cierra la conexión
 $conexion->close();
 ?>
