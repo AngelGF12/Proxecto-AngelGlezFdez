@@ -1,0 +1,212 @@
+/* Iconos usados en la página */
+@font-face {
+    font-family: "Flaticon1";
+    src: url("../icons/flaticon.eot");
+    src: url("../icons/flaticon.eot#iefix") format("embedded-opentype"),
+    url("../icons/flaticon.woff") format("woff"),
+    url("../icons/flaticon.ttf") format("truetype"),
+    url("../icons/flaticon.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="flaticon1-"]:before, [class*=" flaticon1-"]:before,[class^="flaticon1-"]:after, [class*=" flaticon1-"]:after {   
+    font-family: "Flaticon1";
+    font-size: 20px;
+    font-style: normal;
+}
+
+.flaticon1-FB:before {
+    content: "\e076";
+}
+
+.flaticon1-X:before {
+    content: "\e103";
+}
+
+.flaticon1-IG:before {
+    content: "\e030";
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 2%;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: dodgerblue 0.1em 0.1em 0.2em;
+}
+
+nav, section h2 {
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section p a {
+    color: dodgerblue;
+}
+
+.fondoLogo {
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+    margin: 0% -2% 0% -2%;
+}
+
+.logo {
+    height: 18em;
+    width: auto;
+}
+
+.presentacion {
+    background-color: #fff;
+    color: black;
+    padding: 1% 10% 1% 10%;
+    text-align: center;
+    margin: 0% -2% 0% -2%;
+    font-size: 1.4em;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 5px;
+    display: flex;
+}
+
+.menu ul li:last-child {
+    margin-left: auto;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #555;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+footer {
+    margin: 5% -2% -2% -2%;
+    background-color: #fff;
+    color: black;
+    padding: 10px;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+footer li {
+    float: left;
+}
+
+footer a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.politicas li {
+    text-decoration: underline;
+    float: none;
+}
+
+footer p {
+    text-align: right;
+}
+
+input {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    border-radius: 6px;
+    border-color: dodgerblue;
+    padding: 12px;
+    width: 25%;	
+}
+
+input[type="reset"]:active, input[type="submit"]:active{
+    transform: scale(1.05);
+    font-size: 20px;
+}
+
+.formularioInicioSesion {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.formularioInicioSesion legend {
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+button[type="submit"] {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    border-radius: 8px;
+    border: 2px solid dodgerblue;
+    padding: 14px 20px;
+    width: auto;
+    cursor: pointer;
+    background-color: dodgerblue;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #fff;
+    color: dodgerblue;
+}
+
+button[type="reset"] {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    border-radius: 8px;
+    border: 2px solid indianred;
+    padding: 14px 20px;
+    width: auto;
+    cursor: pointer;
+    background-color: indianred;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button[type="reset"]:hover {
+    background-color: #fff;
+    color: indianred;
+}
