@@ -276,7 +276,7 @@ button[type="reset"]:hover {
     text-decoration: none;
 }
 
-menu-mobile li a:hover {
+.menu-mobile li a:hover {
     background-color: #555;
 }
 
