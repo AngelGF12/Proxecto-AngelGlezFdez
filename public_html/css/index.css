@@ -180,6 +180,24 @@ input[type="reset"]:active, input[type="submit"]:active{
     font-size: 18px;
 }
 
+fieldset {
+   border:0 none;
+}
+
+#mensajeError:empty {
+    background-color: transparent;
+    border: 0px;
+    color: #333;
+}
+
+#mensajeError {
+    background-color: #fff;
+    color: indianred;
+    border: 4px solid indianred;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 /* Estilos botones */
 button[type="submit"] {
     font-family: 'Helvetica', sans-serif;
@@ -234,3 +252,76 @@ button[type="reset"]:hover {
     background-color: #fff;
     color: deepskyblue;
 }
+
+/* Menú navegación móvil */
+.menu-mobile {
+    display: none; /* El menú móvil estará oculto por defecto */
+}
+
+.menu-mobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 5px;
+    display: flex;
+}
+
+.menu-mobile a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+menu-mobile li a:hover {
+    background-color: #555;
+}
+
+.burger-menu {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.burger-menu:hover {
+    background: #555;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* Media query para mostrar/ocultar el menú según el tamaño de la pantalla */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none; /* Oculta el menú normal en pantallas pequeñas */
+    }
+
+    .menu-mobile {
+        display: block; /* Muestra el menú móvil en pantallas pequeñas */
+    }
+}
+
+/* Banner de Cookies */
+.cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: black;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+
+.cookie-banner button {
+    margin: 0 10px;
+}
+

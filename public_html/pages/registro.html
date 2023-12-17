@@ -13,6 +13,20 @@
 <body>
     <header>
         <h1><a href="../index.html">LevelUpPlace</a></h1>
+        
+        <!-- Menú navegación móvil -->
+        <nav class="menu-mobile">
+            <button class="burger-menu">&#9776; Menú</button>
+            <br/>
+            <ul class="mobile-list">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="conversaciones-rese%C3%B1as.html">Conversaciones/Reseñas</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="inicio-sesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Menú navegación -->
         <nav class="menu">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
@@ -28,34 +42,36 @@
     <br/>
     
     <section>
-        <legend>Rellene el siguiente formulario para registrarse</legend>
-        <br/>
         <form action="../php/registro.php" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Nombre *" pattern="[a-zA-Z]+">
-            <br/><br/>
-            <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" name="usuario" placeholder="Nombre de Usuario *" required pattern="[a-zA-Z0-9]+">
-            <br/><br/>
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" placeholder="Email *" required>
-            <br/><br/>
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña *" required>
-            <br/><br/><br/>
-            
-            <input type="checkbox" id="aceptaBases">
-            <label for="aceptaBases">Acepto las bases legales, términos y condiciones.</label>
-            <br/>
-            <input type="checkbox" id="aceptaComunicaciones">
-            <label for="aceptaComunicaciones">Acepto recibir comunicaciones y novedades.</label>
-            <br/>
-            
-            <button type="reset">Vaciar Campos</button>
-            <button type="submit">Registrarse</button>
-            
-            <br/>
-            <p>* Campos obligatorios</p>
+            <fieldset>
+                <legend>Rellene el siguiente formulario para registrarse</legend>
+                <br/>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Nombre *" pattern="[a-zA-Z]+">
+                <br/><br/>
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Nombre de Usuario *" required pattern="[a-zA-Z0-9]+">
+                <br/><br/>
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Email *" required>
+                <br/><br/>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña *" required>
+                <br/><br/><br/>
+
+                <input type="checkbox" id="aceptaBases">
+                <label for="aceptaBases">Acepto las bases legales, términos y condiciones.</label>
+                <br/>
+                <input type="checkbox" id="aceptaComunicaciones">
+                <label for="aceptaComunicaciones">Acepto recibir comunicaciones y novedades.</label>
+                <br/>
+
+                <button type="reset">Vaciar Campos</button>
+                <button type="submit">Registrarse</button>
+
+                <br/>
+                <p>* Campos obligatorios</p>
+            </fieldset>
         </form>
 
         <br/>

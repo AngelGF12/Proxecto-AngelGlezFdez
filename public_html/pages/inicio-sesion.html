@@ -13,6 +13,20 @@
 <body>
     <header>
         <h1><a href="../index.html">LevelUpPlace</a></h1>
+        
+        <!-- Menú navegación móvil -->
+        <nav class="menu-mobile">
+            <button class="burger-menu">&#9776; Menú</button>
+            <br/>
+            <ul class="mobile-list">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="conversaciones-rese%C3%B1as.html">Conversaciones/Reseñas</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="inicio-sesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Menú navegación -->
         <nav class="menu">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
@@ -27,20 +41,22 @@
     <section class="formularioInicioSesion"><h2>Inicio de Sesión</h2></section>
     
     <section class="formularioInicioSesion">
-        <legend>Introduzca sus credenciales</legend>
-        <br/>
         <form action="../php/autentificacion.php" method="POST">
-            <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" name="usuario" required placeholder="Nombre de Usuario" pattern="[a-zA-Z0-9]+">
-            <br/><br/>
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
-            <br/><br/>
-            <button type="submit">Iniciar Sesión</button>
+            <fieldset>
+                <legend>Introduzca sus credenciales</legend>
+                <br/>
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required placeholder="Nombre de Usuario" pattern="[a-zA-Z0-9]+">
+                <br/><br/>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                <br/><br/>
+                <button type="submit">Iniciar Sesión</button>
+            </fieldset>
         </form>
     
         <br/>
-        <p>No tienes una cuenta? <a href="registro.html">Registrate!</a></p>
+        <p>No tienes una cuenta? <a href="registro.html">Regístrate!</a></p>
         
     </section>
     

@@ -1,6 +1,6 @@
-// Agregamos las noticias automáticamente usando el siguiente métono de gestión de eventos
+//Se agregan las noticias automáticamente usando el siguiente métono de gestión de eventos
 document.addEventListener('DOMContentLoaded', function () {
-    // Proporcionamos la clave de nuestra api y la url para realizar las peticiones
+    //Se proporciona la clave de nuestra API y la URL para realizar las peticiones
     const apiKey = '3f46c2d81e224b1d898b76fbe147eaa6';
     const newsApiUrl = `https://newsapi.org/v2/everything?q=videojuegos&apiKey=${apiKey}`;
 
@@ -17,19 +17,53 @@ document.addEventListener('DOMContentLoaded', function () {
                 const articleElement = document.createElement('article');
                 const titleElement = document.createElement('h2');
                 const descriptionElement = document.createElement('p');
+                const imageElement = document.createElement('img');
+                const linkElement = document.createElement('a');
 
                 titleElement.textContent = article.title;
                 descriptionElement.textContent = article.description;
+                imageElement.src = article.urlToImage;
+                linkElement.href = article.url;
+                linkElement.textContent = 'Leer más';
 
                 articleElement.appendChild(titleElement);
+                articleElement.appendChild(imageElement);
                 articleElement.appendChild(descriptionElement);
+                articleElement.appendChild(linkElement);
                 newsSection.appendChild(articleElement);
             });
+
+            //Se aplican estilos adicionales después de agregar todos los elementos
+            applyAdditionalStyles();
         })
         .catch(error => console.error('Error al obtener noticias:', error));
 });
 
-// Comprobamos que los datos que se introducen en registro sean validos
+//Función para aplicar estilos adicionales después de agregar los elementos
+function applyAdditionalStyles() {
+    const newsArticles = document.querySelectorAll('#newsSection article');
+    newsArticles.forEach(article => {
+        //Estilos aplicados a los elementos
+        article.style.marginBottom = '20px';
+
+        const image = article.querySelector('img');
+        if (image) {
+            image.style.maxWidth = '50%';
+            image.style.height = 'auto';
+            image.style.display = 'block';
+        }
+
+        const link = article.querySelector('a');
+        if (link) {
+            link.style.display = 'block';
+            link.style.marginTop = '10px';
+            link.style.color = '#fff';
+            link.style.padding = '8px';
+        }
+    });
+}
+
+//Se comprueba que los datos que se introducen en el formulario de registro sean válidos
 document.addEventListener('DOMContentLoaded', function () {
         const formulario = document.querySelector('form');
         const mensajeError = document.getElementById('mensajeError');
@@ -123,3 +157,57 @@ function generarHTMLComentarios(comentarios) {
 
     return html;
 }
+
+//Menú móvil
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const mobileList = document.querySelector('.mobile-list');
+
+    // Mostrar el menú móvil por defecto
+    burgerMenu.classList.add('active');
+    mobileList.style.display = 'block';
+    
+    burgerMenu.addEventListener('click', function () {
+        //Alternar la visibilidad del menú móvil
+        mobileList.style.display = (mobileList.style.display === 'block') ? 'none' : 'block';
+    });
+});
+
+//Banner de Cookies
+document.addEventListener("DOMContentLoaded", function () {
+    const cookieBanner = document.getElementById('cookieBanner');
+
+    if (cookieBanner) {
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieBanner.style.display = 'block';
+
+            document.getElementById('acceptAllCookies').addEventListener('click', acceptAllCookies);
+            document.getElementById('acceptNecessaryCookies').addEventListener('click', acceptNecessaryCookies);
+            document.getElementById('rejectAllCookies').addEventListener('click', rejectAllCookies);
+        }
+    }
+
+    function acceptAllCookies() {
+        setCookieConsent(true);
+        hideCookieBanner();
+    }
+
+    function acceptNecessaryCookies() {
+        setCookieConsent(true);
+        hideCookieBanner();
+    }
+
+    function rejectAllCookies() {
+        setCookieConsent(false);
+        hideCookieBanner();
+    }
+
+    function setCookieConsent(consent) {
+        localStorage.setItem('cookieConsent', consent);
+        document.location.reload();
+    }
+
+    function hideCookieBanner() {
+        cookieBanner.style.display = 'none';
+    }
+});
